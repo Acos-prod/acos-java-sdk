@@ -10,7 +10,7 @@
         <version>7</version>
     </parent>
 
-    <groupId>com.dtsre</groupId>
+    <groupId>io.github.acos-prod</groupId>
     <artifactId>acos-java-sdk</artifactId>
     <version>1.0.0</version>
 
