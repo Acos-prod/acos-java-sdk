@@ -4,10 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <groupId>com.dtsre</groupId>
     <artifactId>acos-java-sdk</artifactId>
     <version>1.0.0</version>
 
+    <profiles>
+        <profile>
+            <id>sonatype-oss-release</id>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
@@ -57,9 +68,9 @@
                             <library>jersey2</library>
 
 <!--                            <templateDirectory>/Users/luyuanyuan/me/idea_workspace/yc-console-api-client/.generator/templates</templateDirectory>-->
-                            <apiPackage>com.dtsre.api.v1.client.api</apiPackage>
-                            <modelPackage>com.dtsre.api.v1.client.model</modelPackage>
-                            <invokerPackage>com.dtsre.api.v1.client</invokerPackage>
+                            <apiPackage>com.dtsre.acos.sdk.api</apiPackage>
+                            <modelPackage>com.dtsre.acos.sdk.model</modelPackage>
+                            <invokerPackage>com.dtsre.acos.sdk</invokerPackage>
 
                             <additionalProperties>java8=true,dateLibrary=java8</additionalProperties>
                             <configOptions>
@@ -83,14 +94,14 @@
 
                             <output>${project.basedir}/html</output>
                             <generatorName>html2</generatorName>
-                            <apiPackage>com.dtsre.api.v1.client.api</apiPackage>
-                            <modelPackage>com.dtsre.api.v1.client.model</modelPackage>
-                            <invokerPackage>com.dtsre.api.v1.client</invokerPackage>
+                            <apiPackage>com.dtsre.acos.sdk.api</apiPackage>
+                            <modelPackage>com.dtsre.acos.sdk.model</modelPackage>
+                            <invokerPackage>com.dtsre.acos.sdk</invokerPackage>
                             <additionalProperties>java8=true,dateLibrary=java8</additionalProperties>
                             <configOptions>
                                 <dateLibrary>java8</dateLibrary>
                                 <java8>true</java8>
-                                <appDescription>到家-------------哦阿的江傲耍酒疯狗啊</appDescription>
+                                <appDescription>云掣 acos 接口开放</appDescription>
                             </configOptions>
 
                         </configuration>
@@ -193,7 +204,7 @@
         <junit-version>4.13.1</junit-version>
     </properties>
 
-    <distributionManagement>
+   <!-- <distributionManagement>
         <repository>
             <id>dtstack-release</id>
             <url>http://nexus.dev.dtstack.cn/nexus/content/repositories/dtstack-release/</url>
@@ -202,5 +213,41 @@
             <id>dtstack-snapshot</id>
             <url>http://nexus.dev.dtstack.cn/nexus/content/repositories/dtstack-snapshot/</url>
         </snapshotRepository>
+    </distributionManagement>-->
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>${sonatypeOssDistMgmtSnapshotsUrl}</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-nexus-staging</id>
+            <name>Nexus Release Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <tag>master</tag>
+        <url>git@github.com:Acos-prod/acos-java-sdk.git</url>
+        <connection>scm:git:git@github.com:Acos-prod/acos-java-sdk.git</connection>
+        <developerConnection>scm:git:git@github.com:Acos-prod/acos-java-sdk.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>suxia</name>
+            <email>suxia@dtstack.com</email>
+            <organization>Acos-prod</organization>
+        </developer>
+    </developers>
 </project>
