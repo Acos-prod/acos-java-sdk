@@ -23,19 +23,6 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
@@ -52,8 +39,6 @@
                 <!-- /RELEASE_VERSION -->
                 <executions>
                     <execution>
-                        <id>generate-java-client</id>
-                        <phase>compile</phase>
                         <goals>
                             <goal>generate</goal>
                         </goals>
@@ -74,34 +59,7 @@
 
                             <additionalProperties>java8=true,dateLibrary=java8</additionalProperties>
                             <configOptions>
-                                <dateLibrary>java8</dateLibrary>
-                                <java8>true</java8>
 <!--                                <sourceFolder>src/gen/java/main</sourceFolder>-->
-                            </configOptions>
-
-                        </configuration>
-                    </execution>
-
-                    <execution>
-                        <id>generate-html-doc</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-
-                            <inputSpec>${project.basedir}/.generator/schemas/v1/api.json</inputSpec>
-
-                            <output>${project.basedir}/html</output>
-                            <generatorName>html2</generatorName>
-                            <apiPackage>com.dtsre.acos.sdk.api</apiPackage>
-                            <modelPackage>com.dtsre.acos.sdk.model</modelPackage>
-                            <invokerPackage>com.dtsre.acos.sdk</invokerPackage>
-                            <additionalProperties>java8=true,dateLibrary=java8</additionalProperties>
-                            <configOptions>
-                                <dateLibrary>java8</dateLibrary>
-                                <java8>true</java8>
-                                <appDescription>云掣 acos 接口开放</appDescription>
                             </configOptions>
 
                         </configuration>
