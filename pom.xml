@@ -31,12 +31,12 @@
                     <encoding>utf-8</encoding>
                 </configuration>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.openapitools</groupId>
                 <artifactId>openapi-generator-maven-plugin</artifactId>
-                <!-- RELEASE_VERSION -->
+                &lt;!&ndash; RELEASE_VERSION &ndash;&gt;
                 <version>5.4.0</version>
-                <!-- /RELEASE_VERSION -->
+                &lt;!&ndash; /RELEASE_VERSION &ndash;&gt;
                 <executions>
                     <execution>
                         <goals>
@@ -48,24 +48,24 @@
 
                             <output>${project.basedir}/v1</output>
 
-<!--                            <configurationFile>/Users/luyuanyuan/me/idea_workspace/yc-console-api-client/.generator/config/v1.json</configurationFile>-->
+&lt;!&ndash;                            <configurationFile>/Users/luyuanyuan/me/idea_workspace/yc-console-api-client/.generator/config/v1.json</configurationFile>&ndash;&gt;
                             <generatorName>java</generatorName>
                             <library>jersey2</library>
 
-<!--                            <templateDirectory>/Users/luyuanyuan/me/idea_workspace/yc-console-api-client/.generator/templates</templateDirectory>-->
+&lt;!&ndash;                            <templateDirectory>/Users/luyuanyuan/me/idea_workspace/yc-console-api-client/.generator/templates</templateDirectory>&ndash;&gt;
                             <apiPackage>com.dtsre.acos.sdk.api</apiPackage>
                             <modelPackage>com.dtsre.acos.sdk.model</modelPackage>
                             <invokerPackage>com.dtsre.acos.sdk</invokerPackage>
 
                             <additionalProperties>java8=true,dateLibrary=java8</additionalProperties>
                             <configOptions>
-<!--                                <sourceFolder>src/gen/java/main</sourceFolder>-->
+&lt;!&ndash;                                <sourceFolder>src/gen/java/main</sourceFolder>&ndash;&gt;
                             </configOptions>
 
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
 
