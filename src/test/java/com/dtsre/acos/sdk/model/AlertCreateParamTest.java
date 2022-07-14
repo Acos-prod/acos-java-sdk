@@ -18,6 +18,7 @@ import org.junit.Test;
 
 /**
  * Model tests for AlertCreateParam
+ * 测试变更通知
  */
 public class AlertCreateParamTest {
     private final AlertCreateParam model = new AlertCreateParam();
